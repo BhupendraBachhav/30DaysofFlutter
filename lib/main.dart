@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catelog/pages/home.dart';
 import 'package:flutter_catelog/pages/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -13,10 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     bringVegetable();
     return MaterialApp(
-     
       themeMode: ThemeMode.light,
       // this is for light theme
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily
+        
+      ),
       // this is for dart theme
       darkTheme: ThemeData(
         brightness: Brightness.dark,
@@ -24,7 +29,7 @@ class MyApp extends StatelessWidget {
 
       routes: {
         "/": (context) => LoginPage(),
-        "/home":(context) => HomePage(),
+        "/home": (context) => HomePage(),
         "/login": (context) => LoginPage()
       },
     );
