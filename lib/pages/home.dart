@@ -10,7 +10,10 @@ class HomePage extends StatelessWidget {
     final String name = "Bhupendra";
     return Scaffold(
       appBar: AppBar(
-        title: Text("Bhupendra"),
+        title: Text(
+          "Catelog App",
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Center(
         child: Container(

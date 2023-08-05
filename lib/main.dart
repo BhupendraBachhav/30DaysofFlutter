@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_catelog/pages/home.dart';
 import 'package:flutter_catelog/pages/login_page.dart';
 import 'package:flutter_catelog/utils/routes.dart';
+import 'package:flutter_catelog/utils/widget/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,22 +15,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     bringVegetable();
     return MaterialApp(
-     debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.light,
       // this is for light theme
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: MyTheme.lightTheme(context),
+
       // this is for dart theme
-      
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+
+      darkTheme: MyTheme. darkTheme(context),
 
       initialRoute: MyRoutes.homeRoutes,
 
       routes: {
         "/": (context) => const LoginPage(),
-        MyRoutes.homeRoutes:(context) => const HomePage(),
-        MyRoutes.loginRoutes: (context) =>const LoginPage()
+        MyRoutes.homeRoutes: (context) => const HomePage(),
+        MyRoutes.loginRoutes: (context) => const LoginPage()
       },
     );
   }
